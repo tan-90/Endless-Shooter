@@ -53,9 +53,9 @@ public class MapGenerator : MonoBehaviour {
         // Map holder object
         string HolderName = "GenerateMap";
 
-        if(transform.FindChild(HolderName))
+        if(transform.Find(HolderName))
         {
-            DestroyImmediate(transform.FindChild(HolderName).gameObject);
+            DestroyImmediate(transform.Find(HolderName).gameObject);
         }
 
         Transform MapHolder = new GameObject(HolderName).transform;

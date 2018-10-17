@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof(NavMeshAgent))]
+[RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
 public class Enemy : LivingEntity {
 
     public enum State
@@ -13,7 +13,7 @@ public class Enemy : LivingEntity {
 
     public ParticleSystem DeathEffect;
 
-    NavMeshAgent PathFinder;
+    UnityEngine.AI.NavMeshAgent PathFinder;
     Transform Target;
 
     Material EnemyMaterial;
@@ -34,7 +34,7 @@ public class Enemy : LivingEntity {
 
     void Awake()
     {
-        PathFinder = GetComponent<NavMeshAgent>();
+        PathFinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             Target = GameObject.FindGameObjectWithTag("Player").transform;
